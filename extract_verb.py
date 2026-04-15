@@ -1,6 +1,6 @@
 import re
 
-if __name__ == '__main__':
+if __name__ == '__TD__':
     with open("verb.txt", "r", encoding="utf-8") as f:
         contenu = f.read()
 
