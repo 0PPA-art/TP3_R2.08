@@ -10,7 +10,7 @@ def print_hi(name):
 import re
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+if __name__ == '__test__':
     print_hi('PyCharm')
     texte = "AF007 BA984 LH7790 AA381 KL976 AF909"
     motif_A = r"[A-Z]{2}[0-9]+"
