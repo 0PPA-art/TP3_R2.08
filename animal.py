@@ -1,5 +1,6 @@
 class Animal:
-    def __init__(self, nom, age):
+    def __init__(self, nom, age, style, titre):
+        super().__init__(style, titre)
         self.nom = nom
         self.age = age
 
@@ -9,23 +10,20 @@ class Animal:
 
 class Mammifere(Animal):
     def __init__(self, nom, age, race, type_pelage, couleur, style, titre):
-        super().__init__(nom, age)
+        super().__init__(nom, age, style, titre)
         self.race = race
         self.type_pelage = type_pelage
         self.couleur = couleur
-        self.style = style
-        self.titre = titre
+
 
     def se_presenter(self):
         print(f"Je suis un(e) {self.race}, revêtu de {self.type_pelage} revêtu de {self.couleur}")
 
 class Oiseau(Animal):
-    def __init__(self, nom, age, ordre, envergure, style, titre):
-        super().__init__(nom, age)
+    def __init__(self, nom, age, ordre, envergure, style=None, titre=None):
+        super().__init__(nom, age, style, titre)
         self.ordre = ordre
         self.envergure = envergure
-        self.style = style
-        self.titre = titre
 
     def se_presenter(self):
         print(f"Je suis un oiseau de type {self.ordre} et mon {self.envergure} est de {self.envergure} cm")
@@ -42,7 +40,7 @@ class Personnage:
 
 class ActeurMammifere(Mammifere, Personnage):
         def __init__(self, nom, age, race, type_pelage, couleur, style, titre):
-            super().__init__(nom, age, race,type_pelage, couleur,style, titre)
+            super().__init__(nom, age, race, type_pelage, couleur,style, titre)
 
 class ActeurOiseau(Oiseau, Personnage):
         def __init__(self, nom, age, ordre, envergure, style, titre):
@@ -52,9 +50,9 @@ class ActeurOiseau(Oiseau, Personnage):
 
 
 if __name__ == '__main__':
-    animaux = [Animal("Simba", 5), Animal("Beethoven", 3), Animal("César", 26), Animal("Dumbo", 1)]
-    for animal in animaux:
-        animal.se_presenter()
+    # animaux = [Animal("Simba", 5), Animal("Beethoven", 3), Animal("César", 26), Animal("Dumbo", 1)]
+    # for animal in animaux:
+    #     animal.se_presenter()
 
 
     animaux = [
